@@ -4,7 +4,7 @@ removed_indices = []
 while sequence_of_distances:
     index = int(input())
     current_removed = 0
-    
+
     if index < 0:
         current_removed = sequence_of_distances.pop(0)
         sequence_of_distances.insert(0, sequence_of_distances[-1])
@@ -25,7 +25,6 @@ while sequence_of_distances:
         else idx - current_removed
         for idx in sequence_of_distances
     ]
-    current_removed = 0
 
 print(sum(removed_indices))
 
