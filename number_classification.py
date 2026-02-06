@@ -1,16 +1,8 @@
 numbers = input().split(", ")
 
-positive_lst = []
-negative_lst = []
-even_lst = []
-odd_lst = []
+positive_lst = [num for num in numbers if int(num) >= 0]
+negative_lst = [num for num in numbers if int(num) < 0]
+even_lst = [num for num in numbers if int(num) % 2 == 0]
+odd_lst = [num for num in numbers if int(num) % 2 != 0]
 
-for num in numbers:
-    if int(num) >= 0:
-        positive_lst.append(num)
-    elif int(num) < 0:
-        negative_lst.append(num)
-
-    if int(num) % 2 -- 0:
-        even_lst.append(num)
-    elif
+print(f"")
