@@ -3,7 +3,6 @@ removed_indices = []
 
 while sequence_of_distances:
     index = int(input())
-    current_removed = 0
 
     if index < 0:
         current_removed = sequence_of_distances.pop(0)
