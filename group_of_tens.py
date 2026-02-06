@@ -1,10 +1,13 @@
 sequence_of_numbers = list(map(int, input().split(", ")))
 
+borders = 10
+while sequence_of_numbers:
 
+    sequence = [num for num in sequence_of_numbers if num <= borders]
+    sequence_of_numbers = [num for num in sequence_of_numbers if num > borders]
 
-print(f"Group of 10's: {list_of_numbers}")
-print(f"Group of {num_to_twenty(sequence_of_numbers)}'s: {list_of_numbers}")
-print(f"Group of {group}'s: {list_of_numbers}")
-print(f"Group of {group}'s: {list_of_numbers}")
-print(f"Group of {group}'s: {list_of_numbers}")
+    print(f"Group of {borders}'s: {sequence}")
+    borders += 10
+    sequence = []
+
 
