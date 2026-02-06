@@ -1,5 +1,6 @@
 first_sequence = input().split(", ")
 second_sequence = input().split(", ")
+
 my_lst = []
 
 for string in first_sequence:
