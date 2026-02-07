@@ -26,12 +26,18 @@ def swap(first, second, list_of_lessons):
         a, b = idx_first, idx_second
         list_of_lessons[a], list_of_lessons[b] = list_of_lessons[b], list_of_lessons[a]
 
+        if exercise_item_first in list_of_lessons:
+            list_of_lessons.remove(exercise_item_first)
+            new_index = list_of_lessons.index(first)
+            list_of_lessons.insert(new_index + 1, exercise_item_first)
+
+        if exercise_item_second in list_of_lessons:
+            list_of_lessons.remove(exercise_item_second)
+            new_index = list_of_lessons.index(second)
+            list_of_lessons.insert(new_index + 1, exercise_item_second)
 
 def exercise(lesson, list_of_lessons):
     exercise_item = f"{lesson}-Exercise"
-
-    if "-" in lesson:
-        return
 
     if lesson in list_of_lessons:
         idx = list_of_lessons.index(lesson)
@@ -74,4 +80,4 @@ while True:
         exercise(lesson_title, lessons)
 
 for idx, current_lesson in enumerate(lessons):
-    print(f"{idx + 1}.{current_lesson}.")
+    print(f"{idx + 1}.{current_lesson}")
