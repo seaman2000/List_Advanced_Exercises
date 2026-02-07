@@ -14,9 +14,17 @@ def remove(lesson, list_of_lessons):
 
 
 def swap(first, second, list_of_lessons):
+    if first and second in list_of_lessons:
+        indices = [
+            idx
+            for idx, string in enumerate(list_of_lessons)
+            if string == first or string == second
+        ]
+        a, b = indices
+        list_of_lessons[a], list_of_lessons[b] = list_of_lessons[b], list_of_lessons[a]
 
 
-
+def
 
 
 lessons = input().split(", ")
@@ -42,5 +50,6 @@ while True:
     elif current_command == "Swap":
         first_lesson = parts[1]
         second_lesson = parts[2]
+        swap(first_lesson, second_lesson, lessons)
 
 
