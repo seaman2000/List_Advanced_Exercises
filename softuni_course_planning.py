@@ -9,12 +9,17 @@ def insert(lesson, index_, list_of_lessons):
 
 
 def remove(lesson, list_of_lessons):
+    exercise_item = f"{lesson}-Exercise"
     if lesson in list_of_lessons:
-        list_of_lessons.remove(lesson)
-
+        if exercise_item in list_of_lessons:
+            list_of_lessons.remove(lesson)
+            list_of_lessons.remove(exercise_item)
 
 def swap(first, second, list_of_lessons):
-    if first and second in list_of_lessons:
+    exercise_item_first = f"{first}-Exercise"
+    exercise_item_second = f"{second}-Exercise"
+
+    if first in list_of_lessons and second in list_of_lessons:
         indices = [
             idx
             for idx, string in enumerate(list_of_lessons)
@@ -24,7 +29,22 @@ def swap(first, second, list_of_lessons):
         list_of_lessons[a], list_of_lessons[b] = list_of_lessons[b], list_of_lessons[a]
 
 
-def
+def exercise(lesson, list_of_lessons):
+    exercise_item = f"{lesson}-Exercise"
+
+    if "-" in lesson:
+        return
+
+    if lesson in list_of_lessons:
+        idx = list_of_lessons.index(lesson)
+
+        if idx + 1 < len(list_of_lessons) and list_of_lessons[idx + 1] == exercise_item:
+            return
+
+        list_of_lessons.insert(idx + 1, exercise_item)
+    else:
+        list_of_lessons.append(lesson)
+        list_of_lessons.append(exercise_item)
 
 
 lessons = input().split(", ")
@@ -51,5 +71,8 @@ while True:
         first_lesson = parts[1]
         second_lesson = parts[2]
         swap(first_lesson, second_lesson, lessons)
+
+    elif current_command == "Exercise":
+        exercise(lesson_title, lessons)
 
 
