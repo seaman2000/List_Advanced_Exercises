@@ -1,4 +1,4 @@
-# 🐍 Python Fundamentals — Fundamentals Tasks
+# 🐍 Python Fundamentals — List Advanced
 
 ## 📂 Tasks
 
